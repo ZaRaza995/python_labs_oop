@@ -2,7 +2,7 @@ from models import Patient, Doctor
 from interfaces import Printable, Comparable
 from collection import HospitalCollection
 
-# --- Универсальная функция (Требование на 4) ---
+# --- Универсальная функция ---
 def print_all(items: list[Printable]):
     """Функция работает исключительно через интерфейс Printable."""
     print("\n--- Вывод через универсальную функцию ---")
@@ -28,7 +28,7 @@ def main():
     mixed_list = [p1, d1, p2, d2]
     print_all(mixed_list)
 
-    # 4. Работа с Коллекцией (Требование на 5)
+    # 4. Работа с Коллекцией 
     hospital = HospitalCollection()
     hospital.add_item(p1)
     hospital.add_item(p2)
