@@ -1,6 +1,4 @@
 from typing import TypeVar, Generic, Callable, Optional, Protocol
-
-# 1. Определение протоколов (структурных интерфейсов)
 class Displayable(Protocol):
     """Протокол для объектов, которые можно отобразить в виде строки."""
     def display(self) -> str:
