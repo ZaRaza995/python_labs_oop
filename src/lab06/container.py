@@ -11,18 +11,12 @@ class Billable(Protocol):
     def get_bill_amount(self) -> float:
         ...
 
-# 2. Определение TypeVar
-# T - обычный любой тип
 T = TypeVar('T')
-# R - тип для результата метода map
 R = TypeVar('R')
-# D - тип, который строго ограничен протоколом Displayable
 D = TypeVar('D', bound=Displayable)
-# B - тип, ограниченный протоколом Billable
 B = TypeVar('B', bound=Billable)
 
 
-# 3. Реализация Generic коллекции
 class TypedCollection(Generic[T]):
     """Строго типизированная коллекция."""
     
@@ -38,7 +32,6 @@ class TypedCollection(Generic[T]):
     def get_all(self) -> list[T]:
         return list(self._items)
 
-    # --- Новые методы из требований на 4 ---
 
     def find(self, predicate: Callable[[T], bool]) -> Optional[T]:
         """Возвращает первый подходящий элемент или None."""
